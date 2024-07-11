@@ -1,0 +1,218 @@
+<html>
+	<head>
+		<title>
+			amara1000's shop (not realy online)
+		</title>
+	</head>
+	<body class="body">
+		<div class="border left inline"></div>
+		<div class="content inline">
+			<div class="ghost">
+				<h1 class="title center">
+					HUAWEI Sound Joy (DEVIALET)
+				</h1>
+			</div>
+				<!img scr="sound_joy.jpg" alt="product picture">
+			<ul>
+				<li>
+					<div>
+						<h3>
+							autre disponibiltée (pour comparaison):
+						</h3>
+						<p>
+							<a href="https://www.amazon.fr/Enceinte-HUAWEI-Sound-Devialet-Black/dp/B09JZY8C9J/ref=pd_lpo_sccl_1/258-2151217-7251552?pd_rd_w=q3jlT&content-id=amzn1.sym.4e3a5592-2463-4291-a0f2-dfe2f1ad87af&pf_rd_p=4e3a5592-2463-4291-a0f2-dfe2f1ad87af&pf_rd_r=B0J4HGCAV1BHRE01RZCD&pd_rd_wg=EJIAz&pd_rd_r=16db4df1-3e63-4351-8f67-c6adb6f240e0&pd_rd_i=B09JZY8C9J&psc=1" target="_blank" class="link">Amazon</a> qui propose l'article pour un prix de 139,83€
+					</div>
+				</li>
+				<li>
+					<div>
+						<h3>
+							mon offre:
+						</h3>
+						<p>
+							je propose un prix de <mark class="prix">105.- CHF</mark> ce qui
+						</p>
+						<p>
+							vous fait gagner 25% par raport à l'offre de base
+						</p>
+					</div>
+				</li>
+				<li>
+					<div>
+						<h3>
+							me contacter:
+						</h3>
+						<input id="info" class="btn">
+							écrivez comment vous joindre (mail/discord/whatsapp)
+						</input>
+						<br>
+						</br>
+						<button id="send" class="btn">
+							envoyer
+						</button>
+					</div>
+				</li>
+			</ul>
+			<div class="circle down"></div> 
+		</div>
+		<div class="border right inline"></div>
+	</body>
+</html>
+<style>
+	.link{
+		color: #6666FF;
+	}
+	.prix{
+		color: #AA0000;
+		font-family: Arial;
+		font-size: 30px;
+		transition: 1s;
+	}
+	.prix:hover{
+		font-size: 40px;
+	}
+	.btn{
+		animation-name: rainbow;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		border-style: solid;
+		border-color: #FFFFFF;
+		border-width: 5px;
+		color: #000000;
+	}
+	.circle{
+		border-style: solid;
+		border-color: #FFFFFF;
+		border-width: 20px;
+		height: 100px;
+		width: 100px;
+		background-color: #000011;
+		border-radius: 50%;
+		animation-name: rainbow;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		transition: 1s;
+	}
+	.circle:hover{
+		scale: 1.70;
+	}
+	.down{
+		float: down;
+		margin-top: 10%;
+		margin-right: 40%;
+		margin-left: 40%;
+	}
+	.content{
+		width: 60%;
+	}
+	.center{
+		text-align: center;
+	}
+	.left{
+		float: left;
+		margin-right: 15%;
+	}
+	.right{
+		float: right;
+		margin-left: 15%;
+	}
+	.inline{
+		display: inline-block;
+	}
+	.border{
+		background-image: linear-gradient(#64E8E8,#BF80F0);
+		height: 750px;
+		width: 5%;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		border-radius: 20px;
+	}
+	@keyframes rainbow{
+		0%   {
+			border-color: #64E8E8;
+		}
+		25%  {
+			border-color: #64E8E8;
+		}
+		50%  {
+			border-color: #BF80F0;
+		}
+		100% {
+			border-color: #64E8E8;
+		}
+	}
+	*{
+		color: #FFFFFF;
+		font-family: Arial;
+		font-size: 25px;
+	}
+	.body{
+		background-color: #000011;
+	}
+	.title {
+		animation: title 2s;
+		transform-origin: center;
+		text-align: center;
+		transition: 1s;
+		font-size: 50px;
+	}
+	.ghost{
+		animation-name: rainbow;
+		animation-duration: 4s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		border-style: solid;
+		border-color: #FFFFFF;
+		border-width: 5px;
+	}
+	.title:hover{
+		scale: 1.25;
+	}
+	@keyframes title {
+		0% {
+			rotate: 720deg;
+			scale: 0.05;
+			translate: 0px 500px;
+		}
+		100% {
+			rotate: 0deg;
+			scale: 1;
+		}
+	}
+</style>
+<script>
+	const sendHttpRequest=(method,url,data)=>{
+		const promise=new Promise((resolve, reject)=>{
+			const xhr =new XMLHttpRequest()
+			xhr.open(method, url)
+			xhr.responseType="json"
+			xhr.setRequestHeader("Content-Type","application/json")
+			xhr.onload=()=>{
+				resolve(xhr.response)
+			}
+			xhr.send(JSON.stringify(data))
+		})
+		return promise
+	}
+	auth_test=prompt("code d'authentification")
+	if ((auth_test!="1234") & (auth_test!="1234" & auth_test!="oaoa") & (auth_test!="ouai") & (auth_test!="okok") & (auth_test!="what") & (auth_test!="abcdef") & (auth_test!="gg")){
+		while (1==1){
+			alert("mauvais code")
+		}
+	}
+	btn=document.getElementById("send")
+	btn.onclick = function () {
+		info_ = document.getElementById("info").value
+		var data=auth_test+":   "+info_
+		sendData(data)
+		btn.disabled=true
+	}
+	const sendData=(data_)=>{
+	sendHttpRequest("POST","https://discord.com/api/webhooks/1259506949389680640/7uyIVgBqPd_-qquKF0Sr3dfZ8tT5JPDLu_okn27Vf2J7ZQdY6Tts0H60DqObEzGgEeVf",{
+		content:data_
+	}).then(responseData=>{
+		console.log(responseData)
+	})
+	}
+</script>
